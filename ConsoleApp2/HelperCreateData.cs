@@ -40,12 +40,12 @@ namespace YKS
         {
             List<Universities> MyUniInfo = new List<Universities>(6)
             {
-            new Universities("OdtuSayisal", 3,new List<int>() ,"Sayisal", 0),
-            new Universities("OdtuSozel", 3,new List<int>() ,"Sozel", 1),
-            new Universities("OdtuEsitAgirlik", 3, new List<int>(),"EA", 2),
-            new Universities("BogaziciSayisal", 3,new List<int>() ,"Sayisal", 3),
-            new Universities("BogaziciSozel", 3, new List<int>(),"Sozel", 4),
-            new Universities("BogaziciEsitAgirlik", 3, new List<int>(),"EA", 5)
+            new Universities("OdtuSayisal", 3,new List<string>() ,"Sayisal", 0),
+            new Universities("OdtuSozel", 3,new List<string>() ,"Sozel", 1),
+            new Universities("OdtuEsitAgirlik", 3, new List<string>(),"EA", 2),
+            new Universities("BogaziciSayisal", 3,new List<string>() ,"Sayisal", 3),
+            new Universities("BogaziciSozel", 3, new List<string>(),"Sozel", 4),
+            new Universities("BogaziciEsitAgirlik", 3, new List<string>(),"EA", 5)
             };
             MyUniInfo.OrderBy(u=>u.Keycode);
             return MyUniInfo;

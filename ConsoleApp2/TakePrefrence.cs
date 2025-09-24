@@ -27,6 +27,7 @@ namespace YKS
             }
             
             StudenListWithPrefs = studentlist;
+            
         }
         
     }

@@ -8,74 +8,33 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        
 
         List<Students> StudentsList = HelperCreateData.CreateMockStudentList();
         TakePrefrence.CreatePreference(StudentsList);
 
         var Unis = HelperCreateData.CreateMockUniversitiesList();
+        Placement.PlacementFonc(Unis);
         var students = HelperCreateData.CreateMockStudentList();
-        Placement.PlacementFonc();
         for (int i = 0; i < Unis.Count; i++)
         {
-                
-                
-                Console.WriteLine($"University: {Unis[i].Name}");
-                Console.WriteLine($"Kontenjan : {Unis[i].Quota}");
-                Console.WriteLine($"Eğitim Alanı : {Unis[i].Type}");
-                
-                
-                for (int h = 0; h < Unis[i].Quota; h++)
-                {
-                    
-                    
 
-                        if (Unis[i].Type == "Sozel")
-                        {
-                            int checkher = Unis[i].CurrentQuota[h];
-                            var ogr = students.FirstOrDefault(s => s.Sozelorder == checkher);
 
-                            if (ogr != null)
-                            {
-                                Console.WriteLine($"Yerleşenler : {ogr.Name}");
-                            }
-                        }
-                        
-                        
-                        
-                        
-                        else if(Unis[i].Type == "EA")
-                        {
-                            int checkher = Unis[i].CurrentQuota[h];
-                            var ogr = students.FirstOrDefault(s => s.EAorder == checkher);
+            Console.WriteLine($"Okulun adı: {Unis[i].Name}");
+            Console.WriteLine($"Bölümün Türü: {Unis[i].Type}");
+            Console.Write($"Kontenjan sayısı:{Unis[i].Quota}");
+            Console.WriteLine($"Yerleşenler: ");
+            Console.WriteLine($"Yerleşenler: {string.Join(", ", Unis[i].CurrentQuota)}");
+            
+            Console.WriteLine("-------------------------------------");
 
-                            if (ogr != null)
-                            {
-                                Console.WriteLine($"Yerleşenler : {ogr.Name}");
-                            }
-                        }
-                        
-                        
-                        
-                        
-                        else if (Unis[i].Type == "Sayisal")
-                        {
-                            int checkher = Unis[i].CurrentQuota[h];
-                            var ogr = students.FirstOrDefault(s => s.Sayisalorder == checkher);
-
-                            if (ogr != null)
-                            {
-                                Console.WriteLine($"Yerleşenler : {ogr.Name}, ");
-                            }
-                        }
-
-                    
-
-                } // For Döngüsü
-
-                
-                
-             
         }
+        Console.WriteLine("Yerleşemeyenler: " + string.Join(", ", Placement.NonPlaced.Select(s => s.Name)));
 
+        
+        
+
+
+      
     }
 }

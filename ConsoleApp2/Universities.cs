@@ -9,12 +9,12 @@ namespace YKS
     public class Universities
     {
         public string Name { get; set; }
-        public List<int> CurrentQuota { get; set; }
+        public List<string> CurrentQuota { get; set; }
         public int Quota { get; set; }
         public string Type { get; set; }
         public int Keycode { get; set; }
 
-        public Universities(string name, int quota, List<int> currentQuota,string type, int keycode)
+        public Universities(string name, int quota, List<string> currentQuota,string type, int keycode)
         {
             Name = name;
             Quota = quota;
