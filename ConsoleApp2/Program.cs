@@ -31,10 +31,10 @@ internal class Program
         }
         Console.WriteLine("Yerleşemeyenler: " + string.Join(", ", Placement.NonPlaced.Select(s => s.Name)));
 
-        
-        
+
+        ;
 
 
-      
+
     }
 }
